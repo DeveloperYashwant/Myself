@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Yashwant Ghole - Portfolio</title>
+    <!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+/* Global Reset */
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: #676767;
+            color: white;
+        }
+
+        /* Logo and Title */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-right: 20px;
+            font-size: 14px;
+        }
+
+        /* Hamburger Menu Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+        }
+
+        /* Navbar Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background: #444;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .show {
+                display: flex;
+            }
+        }
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: linear-gradient(45deg, #ff0047, #ff77a9, #ffde59, #21d4fd, #b721ff);
+    background-size: 400% 400%;
+    animation: rainbowBackground 10s linear infinite;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(45deg, #ff0047, #ff77a9, #ffde59, #21d4fd, #b721ff);
+    background-size: 400% 400%;
+    animation: rainbowBackground 5s linear infinite;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px auto;
+    transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Skills and Expertise Sections */
+.skills, .expertise {
+    padding: 50px;
+    background: linear-gradient(45deg, #ff0047, #ff77a9, #ffde59, #21d4fd, #b721ff);
+    background-size: 400% 400%;
+    animation: rainbowBackground 5s linear infinite;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+/* Skill Bar Animation */
+.skill-bar {
+    background: #333;
+    border-radius: 20px;
+    margin: 10px auto;
+    width: 80%;
+    height: 25px;
+}
+
+.skill-bar span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0047, #ff77a9, #ffde59);
+    border-radius: 20px;
+    width: 0;
+    animation: growBar 2s forwards;
+}
+
+@keyframes growBar {
+    from { width: 0; }
+    to { width: var(--skill-level); }
+}
+
+/* Contact Section */
+.contact {
+    padding: 30px;
+    background: #333;
+    color: white;
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 8px;
+}
+
+button {
+    padding: 12px 20px;
+    margin-top: 10px;
+    background-color: #ff0047;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff77a9;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Background Animation */
+@keyframes rainbowBackground {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+</style>  
+<script>
+
+function toggleNavbar() {
+    var navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("show");
+}
+
+document.addEventListener("contextmenu", e => { e.preventDefault(); alert("😊 Access Denied!"); });
+document.addEventListener("keydown", e => { if (e.ctrlKey && (e.key === "u" || e.key === "U" || e.key === "I") || e.key === "F12") { e.preventDefault(); alert("😊 Access Denied!"); } });
+
+</script>
+</head>
+<body>
+     <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="tech1.avif" alt="Fish">
+            <a href="#home">Prof. Yashwant Ghole</a>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-phone-alt"></i> +91 7350059415
+        </div>
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#about"><i class="fas fa-user"></i> About</a>
+            <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+            <a href="#expertise"><i class="fas fa-briefcase"></i> Expertise</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+    </div>
+    
+    <div class="hero" id="home">
+        <h1>Professor Yashwant Ghole</h1>
+        <p>Experienced Trainer & Corporate Trainer</p>
+    </div>
+
+    <div class="about card" id="about">
+        <div class="content">
+            <h2>About Me</h2>
+            <img src="myprofile.jpeg" alt="Professor Yashwant Ghole" class="profile-pic">
+            <p>Hi, I am Professor Yashwant Ghole, a passionate trainer with 5+ years of experience specializing in program management, student engagement, and curriculum planning.</p>
+        </div>
+    </div>
+
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+    
+        <div class="skill">
+            <div class="skill-title">HTML</div>
+            <div class="skill-bar"><span style="--skill-level: 90%;"></span></div>
+        </div>
+    
+        <div class="skill">
+            <div class="skill-title">CSS</div>
+            <div class="skill-bar"><span style="--skill-level: 85%;"></span></div>
+        </div>
+    
+        <div class="skill">
+            <div class="skill-title">JavaScript</div>
+            <div class="skill-bar"><span style="--skill-level: 80%;"></span></div>
+        </div>
+    
+        <div class="skill">
+            <div class="skill-title">Python</div>
+            <div class="skill-bar"><span style="--skill-level: 75%;"></span></div>
+        </div>
+    
+        <div class="skill">
+            <div class="skill-title">Java</div>
+            <div class="skill-bar"><span style="--skill-level: 70%;"></span></div>
+        </div>
+    </section>
+    
+    <div class="expertise" id="expertise">
+        <h2>Expertise</h2>
+        <p>Full Stack Development, Corporate Training, Web Development, Backend Technologies</p>
+    </div>
+
+<!-- Contact Section -->
+<div class="contact" id="contact">
+    
+    <div class="social-media">
+        <a href="https://www.facebook.com/" target="_blank" class="social-icon facebook">
+            <img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-icon instagram">
+            <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
+        </a>
+        <a href="https://wa.me/" target="_blank" class="social-icon whatsapp">
+            <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+</div>
+
+    <div class="footer">
+        © 2025 Professor Yashwant Vithoba Ghole
+    </div>
+
+</script>
+</body>
+</html>
